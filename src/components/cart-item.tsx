@@ -21,11 +21,11 @@ export default function CartItem({ id, quantity }: { id: number; quantity: numbe
 					)}
 				</div>
 				<div className="text-muted" style={{ fontSize: "0.75rem" }}>
-					{formatCurrency(item?.price)}
+					{formatCurrency(item?.price as number)}
 				</div>
 			</div>
-			<div className="">{formatCurrency(item?.price * quantity)}</div>
-			<Button variant="outline-danger" size="sm" onClick={() => removeFromCart(item?.id)}>
+			<div className="">{formatCurrency((item?.price as number) * quantity)}</div>
+			<Button variant="outline-danger" size="sm" onClick={() => removeFromCart(item?.id as number)}>
 				&times;
 			</Button>
 		</Stack>
